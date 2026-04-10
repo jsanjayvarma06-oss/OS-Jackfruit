@@ -35,7 +35,7 @@ clean:
 	if [ -d "$(KDIR)" ]; then $(MAKE) -C $(KDIR) M=$(PWD) clean; fi
 	rm -f $(USER_TARGETS) *.o *.mod *.mod.c *.symvers *.order
 	rm -f *.log
-	rm -rf logs
+	sudo rm -rf logs 2>/dev/null || true
 	rm -f /tmp/mini_runtime.sock
 
 .PHONY: all ci module clean
